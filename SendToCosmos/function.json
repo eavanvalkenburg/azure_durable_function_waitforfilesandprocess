@@ -1,0 +1,21 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "doc",
+      "type": "activityTrigger",
+      "direction": "in"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "outdoc",
+      "databaseName": "icecreamratings",
+      "collectionName": "distributor_order",
+      "createIfNotExists": "false",
+      "connectionStringSetting": "CosmosConnectionString",
+      "partitionKey": "/headers/locationId",
+      "collectionThroughput": "400"
+    }
+  ]
+}
